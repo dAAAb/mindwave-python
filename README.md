@@ -5,6 +5,19 @@ Linux and Mac-friendly Python parser to connect and interact with multiple Neuro
 
 This is the software used by Moonshot Lab at Barkley (http://moonshot.barkleyus.com/) for all of our internal MindWave projects.
 
+Important
+===============
+
+如果你買的是黑色的新款 MindWave Mobile ，那麼程式碼當中不需連線，只需指定好 headset = mindwave.Headset('/dev/tty.MindWave') 當中的 Port 名稱即可。例如我的是： /dev/tty.MindWaveMobile-DevA
+
+找尋你的 Port 名稱很容易，打開 Terminal
+
+    ls /dev/tty.*
+
+即會看到 /dev/tty.MindWaveMobile-xxx 那就是了。
+
+For the MindWave Mobile bluetooth headsets, it's unnecessary to use the `connect()` or `disconnect()` methods. If your operating system automatically creates a serial port for the bluetooth device, there's also no need to specify a headset ID. Just pass the serial device path as a parameter when you create a new `Headset` object and you're good to go.
+
 Basic Usage
 -----------
 
