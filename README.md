@@ -8,13 +8,31 @@ This is the software used by Moonshot Lab at Barkley (http://moonshot.barkleyus.
 Important
 ===============
 
-如果你買的是黑色的新款 MindWave Mobile ，那麼程式碼當中不需連線，只需指定好 headset = mindwave.Headset('/dev/tty.MindWave') 當中的 Port 名稱即可。例如我的是： /dev/tty.MindWaveMobile-DevA
+If you're buying black new version MindWave Mobile, then you don't need to insrert any code to connect to the device, the only thing you need to do is to setup the port name in this line:
 
-找尋你的 Port 名稱很容易，打開 Terminal
+    'headset = mindwave.Headset('[port_name]') '
 
-    ls /dev/tty.*
+for example, in this case, mine is  
 
-即會看到 /dev/tty.MindWaveMobile-xxx 那就是了。
+    '/dev/tty.MindWaveMobile-DevA'
+
+and just replace the [port_name] on above line, make it:
+
+    'headset = mindwave.Headset('/dev/tty.MindWaveMobile-DevA') '
+    
+then it will work.
+
+#How to find the [port_name]?
+
+Open terminal, in command type:
+
+    'ls /dev/tty.*'
+
+you'll see 
+
+    '/dev/tty.MindWaveMobile-xxx'
+
+in the output, that's it!
 
 For the MindWave Mobile bluetooth headsets, it's unnecessary to use the `connect()` or `disconnect()` methods. If your operating system automatically creates a serial port for the bluetooth device, there's also no need to specify a headset ID. Just pass the serial device path as a parameter when you create a new `Headset` object and you're good to go.
 
