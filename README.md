@@ -10,15 +10,15 @@ Important
 
 If you're buying black new version MindWave Mobile, then you don't need to insrert any code to connect to the device, the only thing you need to do is to setup the port name in this line:
 
-    'headset = mindwave.Headset('[port_name]') '
+    headset = mindwave.Headset('[port_name]') 
 
 for example, in this case, mine is  
 
-    '/dev/tty.MindWaveMobile-DevA'
+    /dev/tty.MindWaveMobile-DevA
 
 and just replace the [port_name] on above line, make it:
 
-    'headset = mindwave.Headset('/dev/tty.MindWaveMobile-DevA') '
+    headset = mindwave.Headset('/dev/tty.MindWaveMobile-DevA') 
     
 then it will work.
 
@@ -26,11 +26,11 @@ then it will work.
 
 Open terminal, in command type:
 
-    'ls /dev/tty.*'
+    ls /dev/tty.*
 
 you'll see 
 
-    '/dev/tty.MindWaveMobile-xxx'
+    /dev/tty.MindWaveMobile-xxx
 
 in the output, that's it!
 
